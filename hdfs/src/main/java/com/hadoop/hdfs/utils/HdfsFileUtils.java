@@ -1,4 +1,4 @@
-package com.hadoop.hdfs;
+package com.hadoop.hdfs.utils;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -18,9 +18,9 @@ import java.net.URI;
  * @date 2018-06-20
  * @References https://blog.csdn.net/admin1973/article/details/60876255
  */
-public class HDFSHelper {
+public class HdfsFileUtils {
 
-    public static final String HDFS_BASE_PATH="hdfs://172.16.20.11:9000";
+    public static final String HDFS_BASE_PATH="hdfs://192.168.1.10:9000";
 
     public static final String HDFS_ROOT_USER="root";
 
@@ -38,7 +38,7 @@ public class HDFSHelper {
      * @param outputPath
      * @throws Exception
      */
-    public static void dowloadFile(String inputPath,String outputPath)throws Exception{
+    public static void dowloadFile(String inputPath,String outputPath)throws Exception {
         //FileSystem是一个抽象类,因此我们再使用它的时候要先创建FileSystem的实现类(工具类)
         FileSystem fs = FileSystem.get(new URI(HDFS_BASE_PATH),CONFIGURATION);
         InputStream is = fs.open(new Path(inputPath));

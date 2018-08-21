@@ -11,19 +11,53 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/yarn" />
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/client" />
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common" />
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/hdfs" />
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/mapreduce" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common/jdiff" />
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/hdfs/jdiff" />
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/mapreduce/jdiff" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/client" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/hdfs" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/mapreduce" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/yarn" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common/lib" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../hadoop/hadoop-3.1.0/share/hadoop/common/lib" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-common:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-annotations:3.1.0" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: jdk.tools:jdk.tools:1.8">
         <CLASSES>
-          <root url="jar://C:/Program Files/Java/jdk1.8.0_121/lib/tools.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Java/jdk1.8.0_172/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="library" name="Maven: com.google.guava:guava:11.0.2" level="project" />
-    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.4" level="project" />
@@ -77,8 +111,6 @@
     <orderEntry type="library" name="Maven: org.apache.curator:curator-recipes:2.12.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.htrace:htrace-core4:4.1.0-incubating" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.9" level="project" />
-    <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.tukaani:xz:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.kerby:kerb-simplekdc:1.0.1" level="project" />
@@ -110,8 +142,6 @@
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.2.11" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-yarn-client:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-jobclient:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-common:3.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.hadoop:hadoop-hdfs-client:3.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.squareup.okhttp:okhttp:2.7.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.squareup.okio:okio:1.6.0" level="project" />
@@ -216,5 +246,14 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.7.8" level="project" />
     <orderEntry type="library" name="Maven: com.google.inject.extensions:guice-servlet:4.0" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-jobclient:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-common:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-examples:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.8" level="project" />
+    <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
   </component>
 </module>

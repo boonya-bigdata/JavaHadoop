@@ -15,7 +15,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="character2" target="1.8" />
       <module name="hbase" target="1.5" />
       <module name="hdfs" target="1.5" />
       <module name="hive" target="1.5" />
@@ -23,7 +22,6 @@
       <module name="mapreduce" target="1.5" />
       <module name="pig" target="1.5" />
       <module name="spark" target="1.5" />
-      <module name="Temperature" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

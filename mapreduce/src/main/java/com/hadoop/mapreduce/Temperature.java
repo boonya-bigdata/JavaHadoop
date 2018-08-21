@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
  * @ClassName: Temperature
- * @Description: TODO(功能描述:MapReduece年度最高温度分析统计)
+ * @Description: TODO(功能描述:统计年度最高温度)
  * @author: pengjunlin
  * @company: 上海势航网络科技有限公司
  * @date 2018-06-20
@@ -28,9 +28,7 @@ public class Temperature {
      * KeyOut       Mapper的输出数据的Key，这里是每行文字中的“年份”
      * ValueOut     Mapper的输出数据的Value，这里是每行文字中的“气温”
      */
-
-    static class TempMapper extends
-            Mapper<LongWritable, Text, Text, IntWritable> {
+    static class TempMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         @Override
         public void map(LongWritable key, Text value, Context context)
                 throws IOException, InterruptedException {
@@ -54,8 +52,7 @@ public class Temperature {
      * KeyOut       Reducer的输出数据的Key，这里是不重复的“年份”
      * ValueOut     Reducer的输出数据的Value，这里是这一年中的“最高气温”
      */
-    static class TempReducer extends
-            Reducer<Text, IntWritable, Text, IntWritable> {
+    static class TempReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
         @Override
         public void reduce(Text key, Iterable<IntWritable> values,
                            Context context) throws IOException, InterruptedException {
@@ -74,24 +71,26 @@ public class Temperature {
         }
     }
     public static void main(String[] args) throws Exception {
+        if(args.length!=2){
+            System.out.println("input=args[0] ,output=args[1] args.length!=2");
+            System.out.println("=============================================");
+            System.out.println("input=args[0] ,example=>hdfs://172.16.20.11:9000/input.txt");
+            System.out.println("output=args[0] ,example=>hdfs://172.16.20.11:9000/output.txt");
+            return ;
+        }
         //输入路径
-        String dst = "hdfs://172.16.20.11:9000/input.txt";
+        //String dst = "hdfs://172.16.20.11:9000/input.txt";
         //输出路径，必须是不存在的，空文件夹也不行。
-        String dstOut = "hdfs://172.16.20.11:9000/output.txt";
+        //String dstOut = "hdfs://172.16.20.11:9000/output.txt";
         Configuration hadoopConfig = new Configuration();
-        System.setProperty("hadoop.home.dir", "F:\\hadoop-2.7.3");
-        hadoopConfig.set("fs.hdfs.impl",
-                org.apache.hadoop.hdfs.DistributedFileSystem.class.getName()
-        );
-        hadoopConfig.set("fs.file.impl",
-                org.apache.hadoop.fs.LocalFileSystem.class.getName()
-        );
+        hadoopConfig.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName()) ;
+        hadoopConfig.set("fs.file.impl",org.apache.hadoop.fs.LocalFileSystem.class.getName());
         Job job = new Job(hadoopConfig);
         //如果需要打成jar运行，需要下面这句
         //job.setJarByClass(NewMaxTemperature.class);
         //job执行作业时输入和输出文件的路径
-        FileInputFormat.addInputPath(job, new Path(dst));
-        FileOutputFormat.setOutputPath(job, new Path(dstOut));
+        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
         //指定自定义的Mapper和Reducer作为两个阶段的任务处理类
         job.setMapperClass(TempMapper.class);
         job.setReducerClass(TempReducer.class);
